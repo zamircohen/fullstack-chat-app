@@ -84,7 +84,7 @@
 }
 
 .Todo {
-  margin: 0.5rem;
+  margin: 1rem;
   flex: auto;
   width: 30rem;
   border-radius: 5px;
@@ -96,6 +96,7 @@
   justify-content: center;
   vertical-align: center;
   animation: fadeIn 1s;
+  word-wrap: break-word;
 }
 
 .Delete_Button {

@@ -84,7 +84,7 @@ function App() {
             <button className="Delete_Button" onClick={() => deleteChat(item)}> < BsTrash/> </button> 
             </span>
             </div>
-            <br />
+            {/* <br /> */}
             </>
           )
         })
