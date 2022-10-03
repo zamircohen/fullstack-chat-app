@@ -1,5 +1,5 @@
 import ChatItem from "@fullstack-chat-app/shared";
-import { loadAllTodoItems, saveTodoItem, deleteTodoItem, updateTodoItem} from "../models/todos-repository";
+import { loadAllTodoItems, saveTodoItem, deleteTodoItem, updateTodoItem} from "../models/chats-repository";
 import express, { Request, Response } from "express";
 import { loadTodos, saveTodo } from "../services/todos-services";
 
