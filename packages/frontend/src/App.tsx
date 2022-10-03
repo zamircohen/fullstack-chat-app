@@ -47,8 +47,6 @@ function App() {
     }
   }
 
-  
-  
   useEffect(() => {
     const interval = setInterval(() => {
       fetchChats()
@@ -111,7 +109,7 @@ function App() {
         <br />
         <input className="Input_Field" placeholder={`Message...`} minLength={1} maxLength={160} type="text" value={chatText} onChange={(e) => setChatText(e.target.value)}/>
         <br />
-        <button disabled={!chatText} className="Create_Button" onClick={(e) => createChat(chatText, chatUser)}>Send</button>
+        <button disabled={!Boolean(chatText && chatUser)} className="Create_Button" onClick={(e) => createChat(chatText, chatUser)}>Send</button>
       </div>
     </div>
   );
