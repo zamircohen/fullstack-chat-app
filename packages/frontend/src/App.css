@@ -13,6 +13,11 @@
   }
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -73,6 +78,7 @@
   align-items: center;
   justify-content: center;
   vertical-align: center;
+  animation: fadeIn 1s;
 }
 
 .Delete_Button {
@@ -143,4 +149,5 @@ i {
   vertical-align: bottom;
   justify-content: left;
   text-align: left;
+  animation: fadeIn 1s;
 }
