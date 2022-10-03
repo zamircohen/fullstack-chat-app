@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TodoItem from '../../shared/src/chat-item';
+import ChatItem from '../../shared/src/chat-item';
 import "./App.css";
 import axios from "axios";
 import { BsTrash } from "react-icons/bs";
@@ -7,25 +7,25 @@ import { BsTrash } from "react-icons/bs";
 
 axios.defaults.baseURL = process.env.REACT_APP_TODO_API || 'http://localhost:3001'
 
-const fetchTodos = async (): Promise<TodoItem[]> => {
-  const response = await axios.get<TodoItem[]>('/todos')
+const fetchTodos = async (): Promise<ChatItem[]> => {
+  const response = await axios.get<ChatItem[]>('/todos')
   return response.data
 }
 
 function App() {
   const [todoText, setTodoText] = useState<string>('')
-  const [todos, setTodos] = useState<TodoItem[]>([]);
+  const [todos, setTodos] = useState<ChatItem[]>([]);
   const [error, setError] = useState<string | undefined>();
   
   const createTodo = async (todoText: string): Promise<void> => {
-    const todoItem: TodoItem = {
+    const todoItem: ChatItem = {
       text: todoText,
       timeStamp: new Date()
     }
   
   try {
-    await axios.post<TodoItem[]>('/todos', todoItem) 
-    const response = await axios.get<TodoItem[]>('/todos')
+    await axios.post<ChatItem[]>('/todos', todoItem) 
+    const response = await axios.get<ChatItem[]>('/todos')
     setTodos(response.data)
     setTodoText('')
   } catch (err) {
@@ -34,10 +34,10 @@ function App() {
   }
   }
 
-  const deleteTodo = async (todo: TodoItem): Promise<void> => {
+  const deleteTodo = async (todo: ChatItem): Promise<void> => {
     try {
-      await axios.delete<TodoItem[]>(`/todos/${todo._id}`)
-      const response = await axios.get<TodoItem[]>('/todos')
+      await axios.delete<ChatItem[]>(`/todos/${todo._id}`)
+      const response = await axios.get<ChatItem[]>('/todos')
       setTodos(response.data)
     } catch (err) {
       setTodos([])
