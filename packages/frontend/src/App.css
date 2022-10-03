@@ -48,14 +48,31 @@
   width: 100%;
 }
 
-.Input_Field {
+.input-user {
   height: 1rem;
-  width: 20rem;
+  width: 40rem;
+  /* min-height: 1rem; */
+  /* max-height: 4rem; */
   margin: 0.5rem;
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   font-size: 20px;
+  display: inline-block
+}
+
+.input-message {
+  /* height: 1rem; */
+  width: 40rem;
+  /* min-height: 1rem; */
+  /* max-height: 4rem; */
+  margin: 0.5rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  display: inline-block;
+  white-space: normal;
 }
 
 .Create_Button {
@@ -151,3 +168,4 @@ i {
   text-align: left;
   animation: fadeIn 1s;
 }
+

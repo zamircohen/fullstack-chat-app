@@ -105,9 +105,9 @@ function App() {
         </div>
       </header>
       <div className="Bottom_Field">
-        <input className="Input_Field" placeholder={`User`} minLength={1} maxLength={20} type="text" value={chatUser} onChange={(e) => setChatUser(e.target.value)}/>
+        <input className="input-user" placeholder={`User`} minLength={1} maxLength={20} type="text" value={chatUser} onChange={(e) => setChatUser(e.target.value)}/>
         <br />
-        <input className="Input_Field" placeholder={`Message...`} minLength={1} maxLength={160} type="text" value={chatText} onChange={(e) => setChatText(e.target.value)}/>
+        <textarea className="input-message" rows={5} placeholder={`Message...`} minLength={1} maxLength={200} value={chatText} onChange={(e) => setChatText(e.target.value)}/>
         <br />
         <button disabled={!Boolean(chatText && chatUser)} className="Create_Button" onClick={(e) => createChat(chatText, chatUser)}>Send</button>
       </div>
