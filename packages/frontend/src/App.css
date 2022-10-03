@@ -37,7 +37,86 @@
   }
 }
 
-.App-logo {
+.Bottom_Field {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+}
+
+.Input_Field {
+  height: 1rem;
+  width: 20rem;
+  margin: 0.5rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.Create_Button {
+  height: 2rem;
+  width: 8rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.Todo {
+  margin: 0.5rem;
+  flex: auto;
+  width: 30rem;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 30px;
+  background-color: grey;
+  color: white; 
+  align-items: center;
+  justify-content: center;
+  vertical-align: center;
+}
+
+.Delete_Button {
+  height: 2rem;
+  width: 4rem;
+  border-radius: 5px;
+  float: right;
+  font-size: 1.5rem;
+  color: red;
+  vertical-align: middle;
+  justify-content: center;
+  margin-left: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.Edit_Button {
+  height: 2rem;
+  width: 4rem;
+  border-radius: 5px;
+  float: right;
+  font-size: 1.5rem;
+  color: red;
+  vertical-align: middle;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+  height: 1rem;
+  width: 70%;
+  margin: 0.5rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.show {
+  display: block;
+}
+
+
+.Header {
   position: fixed;
   top: 0;
   width: 100%;

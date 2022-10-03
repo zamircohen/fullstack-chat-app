@@ -6,28 +6,28 @@ const ChatSchema = new Schema({
   timeStamp: Date,
 });
 
-const ChatModel = model<ChatItem>("TodoItem", ChatSchema);
+const ChatModel = model<ChatItem>("ChatItem", ChatSchema);
 
 export const setupMongoDb = async (url: string) => {
   await connect(url);
 };
 
-export const loadAllTodoItems = async (): Promise<ChatItem[]> => {
+export const loadAllChatItems = async (): Promise<ChatItem[]> => {
   return await ChatModel.find({}).exec();
 };
 
-export const saveTodoItem = async (chatItem: ChatItem): Promise<void> => {
+export const saveChatItem = async (chatItem: ChatItem): Promise<void> => {
   const newModel = new ChatModel(chatItem);
   newModel.save();
 };
 
-export const deleteTodoItem = async (id: string): Promise<void> => {
+export const deleteChatItem = async (id: string): Promise<void> => {
   await ChatModel.deleteOne({ _id: id });
 };
 
-export const updateTodoItem = async (
-  id: string,
-  chatItem: ChatItem
-): Promise<void> => {
-  await ChatModel.updateOne({ _id: id }, chatItem);
-};
+// export const updateChatItem = async (
+//   id: string,
+//   chatItem: ChatItem
+// ): Promise<void> => {
+//   await ChatModel.updateOne({ _id: id }, chatItem);
+// };

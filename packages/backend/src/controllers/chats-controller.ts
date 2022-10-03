@@ -1,44 +1,44 @@
 import ChatItem from "@fullstack-chat-app/shared";
-import { loadAllTodoItems, saveTodoItem, deleteTodoItem, updateTodoItem} from "../models/chats-repository";
+import { loadAllChatItems, saveChatItem, deleteChatItem } from "../models/chats-repository";
 import express, { Request, Response } from "express";
-import { loadTodos, saveTodo } from "../services/todos-services";
+import { loadChats, saveChat } from "../services/chats-services";
 
-const todosController = express.Router();
+const chatsController = express.Router();
 
-todosController.get("/", async (req: Request, res: Response<ChatItem[]>) => {
+chatsController.get("/", async (req: Request, res: Response<ChatItem[]>) => {
   res.send(await loadChats());
 });
 
-todosController.post(
+chatsController.post(
   "/",
   async (req: Request<ChatItem>, res: Response<ChatItem[]>) => {
     try {
-      res.send(await saveTodo(req.body));
+      res.send(await saveChat(req.body));
     } catch (e) {
       res.sendStatus(400);
     }
   }
 );
 
-todosController.delete(
+chatsController.delete(
   "/:id",
   async (req: Request<{ id: string }>, res: Response<ChatItem[]>) => {
     const id = req.params.id;
     const deleted = await deleteChatItem(id);
-    const todoItems = await loadAllChatItems();
-    res.send(todoItems);
+    const chatItems = await loadAllChatItems();
+    res.send(chatItems);
   }
 );
 
-todosController.put(
-  "/:id",
-  async (req: Request<{ id: string }>, res: Response<ChatItem[]>) => {
-    const id = req.params.id;
-    const todoItem = req.body;
-    const updated = await updateChatItem(id, todoItem);
-    const todoItems = await loadAllChatItems();
-    res.send(todoItems);
-  }
-);
+// chatsController.put(
+//   "/:id",
+//   async (req: Request<{ id: string }>, res: Response<ChatItem[]>) => {
+//     const id = req.params.id;
+//     const chatItem = req.body;
+//     const updated = await updateChatItem(id, chatItem);
+//     const chatItems = await loadAllChatItems();
+//     res.send(chatItems);
+//   }
+// );
 
-export default todosController;
+export default chatsController;
