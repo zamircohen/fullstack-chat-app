@@ -1,5 +1,5 @@
 {
-  "name": "fullstack-chat-app",
+  "name": "true",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,9 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "workspaces": [
-    "./packages/*",
-    "true"
-  ]
+  "license": "ISC"
 }
