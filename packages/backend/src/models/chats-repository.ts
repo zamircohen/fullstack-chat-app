@@ -1,33 +1,33 @@
-import TodoItem from "@fullstack-chat-app/shared";
+import ChatItem from "@fullstack-chat-app/shared";
 import { connect, model, Schema } from "mongoose";
 
-const TodoSchema = new Schema({
+const ChatSchema = new Schema({
   text: String,
   timeStamp: Date,
 });
 
-const TodoModel = model<TodoItem>("TodoItem", TodoSchema);
+const ChatModel = model<ChatItem>("TodoItem", ChatSchema);
 
 export const setupMongoDb = async (url: string) => {
   await connect(url);
 };
 
-export const loadAllTodoItems = async (): Promise<TodoItem[]> => {
-  return await TodoModel.find({}).exec();
+export const loadAllTodoItems = async (): Promise<ChatItem[]> => {
+  return await ChatModel.find({}).exec();
 };
 
-export const saveTodoItem = async (todoItem: TodoItem): Promise<void> => {
-  const newModel = new TodoModel(todoItem);
+export const saveTodoItem = async (chatItem: ChatItem): Promise<void> => {
+  const newModel = new ChatModel(chatItem);
   newModel.save();
 };
 
 export const deleteTodoItem = async (id: string): Promise<void> => {
-  await TodoModel.deleteOne({ _id: id });
+  await ChatModel.deleteOne({ _id: id });
 };
 
 export const updateTodoItem = async (
   id: string,
-  todoItem: TodoItem
+  chatItem: ChatItem
 ): Promise<void> => {
-  await TodoModel.updateOne({ _id: id }, todoItem);
+  await ChatModel.updateOne({ _id: id }, chatItem);
 };
