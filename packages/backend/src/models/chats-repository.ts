@@ -2,6 +2,7 @@ import ChatItem from "@fullstack-chat-app/shared";
 import { connect, model, Schema } from "mongoose";
 
 const ChatSchema = new Schema({
+  user: String,
   text: String,
   timeStamp: Date,
 });

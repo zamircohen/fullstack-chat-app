@@ -15,9 +15,11 @@ function App() {
   const [chatText, setChatText] = useState<string>('')
   const [chats, setChats] = useState<ChatItem[]>([]);
   const [error, setError] = useState<string | undefined>();
+  const [chatUser, setChatUser] = useState<string>('')
   
-  const createChat = async (chatText: string): Promise<void> => {
+  const createChat = async (chatText: string, chatUser: string): Promise<void> => {
     const chatItem: ChatItem = {
+      user: chatUser,
       text: chatText,
       timeStamp: new Date()
     }
@@ -27,6 +29,7 @@ function App() {
     const response = await axios.get<ChatItem[]>('/chats')
     setChats(response.data)
     setChatText('')
+    setChatUser('')
   } catch (err) {
     setChats([])
     setError('Error creating chat')
@@ -67,13 +70,13 @@ function App() {
         chats.map((item) => {
           return (
             <>
-            <div className="Todo">
+            <i>{item.user} skrev den </i>
+            <div className="Todo">  
             <span key={item._id}>{item.text} 
             <button className="Delete_Button" onClick={() => deleteChat(item)}> < BsTrash/> </button> 
-            {/* <button className="Edit_Button"> < AiOutlineEdit/> </button>
-            <input type="text" name="popup" id="popup" className="hide"></input> <button name="popup" id="popup" className="hide">Edit</button> */}
             </span>
             </div>
+            <br />
             </>
           )
         })
@@ -94,9 +97,11 @@ function App() {
         </div>
       </header>
       <div className="Bottom_Field">
-        <input className="Input_Field" placeholder={`Your new chat item...`} minLength={1} maxLength={20} type="text" value={chatText} onChange={(e) => setChatText(e.target.value)}/>
+        <input className="Input_Field" placeholder={`User`} minLength={1} maxLength={20} type="text" value={chatUser} onChange={(e) => setChatUser(e.target.value)}/>
         <br />
-        <button disabled={!chatText} className="Create_Button" onClick={(e) => createChat(chatText)}>Create todo</button>
+        <input className="Input_Field" placeholder={`Message...`} minLength={1} maxLength={160} type="text" value={chatText} onChange={(e) => setChatText(e.target.value)}/>
+        <br />
+        <button disabled={!chatText} className="Create_Button" onClick={(e) => createChat(chatText, chatUser)}>Send</button>
       </div>
     </div>
   );

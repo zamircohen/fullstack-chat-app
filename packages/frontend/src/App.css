@@ -136,3 +136,10 @@
   overflow: hidden;
   overflow-y: scroll;
 }
+
+i {
+  font-size: 1.5rem;
+  color: white;
+  vertical-align: middle;
+  justify-content: center;
+}
