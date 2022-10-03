@@ -70,7 +70,17 @@ function App() {
         chats.map((item) => {
           return (
             <>
-            <i>{item.user} skrev den </i>
+            <i>{item.user} wrote at 
+              {' '}
+              {item.timeStamp.toString().split('T')[0]}
+              {' '}
+              on 
+              {' '}
+              {item.timeStamp.toString().split('T')[1].substring(0, 8)}
+              {' '}
+              {parseInt(item.timeStamp.toString().split('T')[1].substring(0, 8), 10) >= 12 ? 'PM' : 'AM'}
+            {/* </p> */}
+            </i>
             <div className="Todo">  
             <span key={item._id}>{item.text} 
             <button className="Delete_Button" onClick={() => deleteChat(item)}> < BsTrash/> </button> 

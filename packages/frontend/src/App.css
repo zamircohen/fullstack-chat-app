@@ -138,8 +138,9 @@
 }
 
 i {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
-  vertical-align: middle;
-  justify-content: center;
+  vertical-align: bottom;
+  justify-content: left;
+  text-align: left;
 }
