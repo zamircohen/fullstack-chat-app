@@ -1,6 +1,5 @@
 import express, { Application, json, Request, Response } from "express";
 import cors from "cors";
-// import TodoItem from '@my-todo-app/shared'
 import dotenv from "dotenv";
 import { setupMongoDb } from "./models/chats-repository";
 import chatsController from "./controllers/chats-controller";

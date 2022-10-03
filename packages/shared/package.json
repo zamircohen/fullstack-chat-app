@@ -2,7 +2,7 @@
   "name": "@fullstack-chat-app/shared",
   "version": "1.0.0",
   "description": "",
-  "main": "src/chat-item.js",
+  "main": "src/chat-item.ts",
   "scripts": {
     "build": "tsc"
   },
