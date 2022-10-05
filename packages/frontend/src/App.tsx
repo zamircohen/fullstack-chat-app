@@ -68,7 +68,7 @@ function App() {
         chats.map((item) => {
           return (
             <>
-            <i>{item.user} wrote at 
+            <i><b>{item.user}</b> wrote at 
               {' '}
               {item.timeStamp.toString().split('T')[0]}
               {' '}
