@@ -77,14 +77,12 @@ function App() {
               {item.timeStamp.toString().split('T')[1].substring(0, 8)}
               {' '}
               {parseInt(item.timeStamp.toString().split('T')[1].substring(0, 8), 10) >= 12 ? 'PM' : 'AM'}
-            {/* </p> */}
             </i>
             <div className="Todo">  
             <span key={item._id}>{item.text} 
             <button className="Delete_Button" onClick={() => deleteChat(item)}> < BsTrash/> </button> 
             </span>
             </div>
-            {/* <br /> */}
             </>
           )
         })

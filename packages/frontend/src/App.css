@@ -78,8 +78,6 @@
 .input-user {
   height: 1rem;
   width: 40rem;
-  /* min-height: 1rem; */
-  /* max-height: 4rem; */
   margin: 0.5rem;
   border: 1px solid black;
   border-radius: 5px;
@@ -89,10 +87,7 @@
 }
 
 .input-message {
-  /* height: 1rem; */
   width: 40rem;
-  /* min-height: 1rem; */
-  /* max-height: 4rem; */
   margin: 0.5rem;
   border: 1px solid black;
   border-radius: 5px;
@@ -165,9 +160,6 @@
 .show {
   display: block;
 }
-
-
-
 
 i {
   font-size: 1rem;
