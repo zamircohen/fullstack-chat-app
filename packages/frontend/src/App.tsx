@@ -78,10 +78,14 @@ function App() {
               {' '}
               {parseInt(item.timeStamp.toString().split('T')[1].substring(0, 8), 10) >= 12 ? 'PM' : 'AM'}
             </i>
+            <div className="Todo-box">
             <div className="Todo">  
             <span key={item._id}>{item.text} 
-            <button className="Delete_Button" onClick={() => deleteChat(item)}> < BsTrash/> </button> 
+            {/* <button className="Delete_Button" onClick={() => deleteChat(item)}> < BsTrash/> </button>  */}
             </span>
+            
+            </div>
+            <button className="Delete_Button" onClick={() => deleteChat(item)}> < BsTrash/> </button> 
             </div>
             </>
           )
