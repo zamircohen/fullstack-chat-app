@@ -115,7 +115,7 @@
 .chat {
   margin: 1rem;
   flex: auto;
-  width: 40rem;
+  width: 50rem;
   border-radius: 5px;
   padding: 5px;
   font-size: 28px;
@@ -134,7 +134,7 @@
   align-items: center;
   justify-content: center;
   vertical-align: center;
-  width: 50rem;
+  width: 60rem;
 }
 
 .Delete_Button {
@@ -150,6 +150,7 @@
   justify-content: center;
   margin-left: 0.5rem;
   margin-top: 0.25rem;
+  animation: fadeIn 1s;
 }
 
 .Edit_Button {
