@@ -4,7 +4,7 @@ import "./App.css";
 import axios from "axios";
 import { BsTrash } from "react-icons/bs";
 
-axios.defaults.baseURL = process.env.REACT_APP_TODO_API || 'http://localhost:3001'
+axios.defaults.baseURL = process.env.REACT_APP_CHAT_API || 'http://localhost:3001'
 
 const fetchChats = async (): Promise<ChatItem[]> => {
   const response = await axios.get<ChatItem[]>('/chats')
