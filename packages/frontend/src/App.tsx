@@ -3,6 +3,7 @@ import ChatItem from '../../shared/src/chat-item';
 import "./App.css";
 import axios from "axios";
 import { BsTrash } from "react-icons/bs";
+import { MdEdit } from "react-icons/md";
 
 axios.defaults.baseURL = process.env.REACT_APP_CHAT_API || 'http://localhost:3001'
 
@@ -79,11 +80,10 @@ function App() {
               {parseInt(item.timeStamp.toString().split('T')[1].substring(0, 8), 10) >= 12 ? 'PM' : 'AM'}
             </i>
             <div className="chat-box">
+            {/* <button className="Edit_Button" onClick={() => editChat(item)}> < MdEdit/> </button>  */}
             <div className="chat">  
             <span key={item._id}>{item.text} 
-            {/* <button className="Delete_Button" onClick={() => deleteChat(item)}> < BsTrash/> </button>  */}
             </span>
-            
             </div>
             <button className="Delete_Button" onClick={() => deleteChat(item)}> < BsTrash/> </button> 
             </div>
@@ -100,7 +100,7 @@ function App() {
       <header className="App-header">
         <div className="Header">
         <br />
-        My chats...
+        ChutUp
         </div>
         <div className="Output-box">
         {output()}

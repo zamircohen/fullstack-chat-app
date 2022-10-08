@@ -134,14 +134,15 @@
   align-items: center;
   justify-content: center;
   vertical-align: center;
-  width: 60rem;
+  width: 62rem;
+  /* background-color: #61dafb; */
 }
 
 .Delete_Button {
   height: 2rem;
   width: 4rem;
   border-radius: 5px;
-  float: right;
+  /* float: right; */
   font-size: 1.5rem;
   color: red;
   position: absolute;
@@ -157,11 +158,16 @@
   height: 2rem;
   width: 4rem;
   border-radius: 5px;
-  float: right;
+  /* float: right; */
   font-size: 1.5rem;
-  color: red;
+  color: green;
+  position: absolute;
+  left: 0rem;
   vertical-align: middle;
   justify-content: center;
+  margin-left: 0.5rem;
+  margin-top: 0.25rem;
+  animation: fadeIn 1s;
 }
 
 .hide {
