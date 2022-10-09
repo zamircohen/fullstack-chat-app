@@ -127,6 +127,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import ChatPage from "./pages/ChatPage";
+import RegisterPage from "./pages/RegisterPage";
 
 
 
@@ -136,7 +137,9 @@ function App() {
     <div>
     <Routes>
        <Route path="/" element={<LoginPage />} />
+       <Route path="/register" element={<RegisterPage />} />
        <Route path="/chat" element={<ChatPage />} />
+       <Route path="*" element={<h1>404</h1>} />
     </Routes>
     </div>
   );
