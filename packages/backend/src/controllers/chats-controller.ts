@@ -44,12 +44,14 @@ chatsController.delete(
 
 
 // CREATE USER
-chatsController.post("/register", async (req, res) => {
-  const {username, password} = req.body
-  const user = new User({username, password})
-  await user.save()
-  res.json({username})
-})
+chatsController.post("/register", async (req: Request<User>, res: Response<User>) => {
+  try {
+    res.send(await saveChat(req.body));
+  } catch (e) {
+    res.sendStatus(400);
+  }
+});
+
 
 
 
