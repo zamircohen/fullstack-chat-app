@@ -1,4 +1,5 @@
 import ChatItem from "@fullstack-chat-app/shared";
+import User from "@fullstack-chat-app/shared";
 import { loadAllChatItems, saveChatItem, deleteChatItem } from "../models/chats-repository";
 import express, { Request, Response } from "express";
 import { loadChats, saveChat } from "../services/chats-services";
@@ -40,5 +41,17 @@ chatsController.delete(
 //     res.send(chatItems);
 //   }
 // );
+
+
+// CREATE USER
+chatsController.post("/register", async (req, res) => {
+  const {username, password} = req.body
+  const user = new User({username, password})
+  await user.save()
+  res.json({username})
+})
+
+
+
 
 export default chatsController;

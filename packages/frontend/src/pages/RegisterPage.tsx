@@ -15,7 +15,7 @@ export default function SignupPage() {
             username,
             password,
         }
-        const url = "http://localhost:3001/create"
+        const url = "http://localhost:3001/register"
         fetch(url, {
             method: "POST",
             headers: {
@@ -30,25 +30,35 @@ export default function SignupPage() {
 
 
   return (
-    <div>
-        <h1>Create account</h1>
+    <div className="App">
+      <header className="App-header">
+        <div className="Header">
+        <br />
+        Create account
+        </div>
         <form onSubmit={handleOnSubmit}>
-                Username: <input 
+                {/* Username:  */}
+                <input 
                     type="text"
-                    placeholder="Username"
+                    placeholder="Create username"
                     value={username}
                     onChange={e => setUsername(e.target.value)}
-                /> <br />
-                Password: <input 
+                /> 
+                <br />
+                {/* Password:  */}
+                <input 
                     type="password" 
-                    placeholder="Password"
+                    placeholder="Create password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
-                /> <br />
+                /> 
+                <br />
                 <button type="submit">Sign up</button>
            </form>
-           <br />
-           <a href="/">Back to login</a>
+        <div className="Bottom_Field">
+            <button onClick={() => navigate("/")}>Back to login</button>
+        </div>
+     </header>
     </div>
   )
 }
