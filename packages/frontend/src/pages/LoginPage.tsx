@@ -32,9 +32,7 @@ export default function LoginPage() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="Header">
-          Login
-        </div>
+        <div className="Header">Login</div>
         <div className="Output-box">
           <input
             type="text"
@@ -54,11 +52,9 @@ export default function LoginPage() {
         </div>
 
         <div className="Bottom_Field">
-            <button onClick={() => navigate("/register")}>Register</button>
+          <button onClick={() => navigate("/register")}>Register</button>
         </div>
-        
       </header>
     </div>
   );
 }
-
