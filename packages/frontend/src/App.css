@@ -134,13 +134,16 @@ button {
 .chat {
   margin: 1rem;
   flex: auto;
-  width: 50rem;
+  /* width: 50rem; */
+  max-width: 40rem;
   border-radius: 5px;
   padding: 5px;
   font-size: 28px;
   background-color: grey;
   color: white; 
   align-items: center;
+  text-align: justify;
+  padding: 15px;
   justify-content: center;
   vertical-align: center;
   animation: fadeIn 1s;
@@ -154,14 +157,12 @@ button {
   justify-content: center;
   vertical-align: center;
   width: 62rem;
-  /* background-color: #61dafb; */
 }
 
 .Delete_Button {
   height: 2rem;
   width: 4rem;
   border-radius: 5px;
-  /* float: right; */
   font-size: 1.5rem;
   color: red;
   position: absolute;
@@ -177,7 +178,6 @@ button {
   height: 2rem;
   width: 4rem;
   border-radius: 5px;
-  /* float: right; */
   font-size: 1.5rem;
   color: green;
   position: absolute;
