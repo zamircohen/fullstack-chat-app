@@ -82,6 +82,15 @@
   overflow-y: scroll;
 }
 
+.Output-box::-webkit-scrollbar {
+  display: none;
+}
+
+.Output-box {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .input-user {
   height: 1rem;
   width: 40rem;
