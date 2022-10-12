@@ -148,9 +148,11 @@ button {
   /* width: 50rem; */
   max-width: 40rem;
   border-radius: 5px;
+  border-color: lightgray;
+  border-width: 1px;
+  border-style: solid;
   padding: 5px;
   font-size: 28px;
-  background-color: grey;
   color: white; 
   align-items: center;
   text-align: justify;
