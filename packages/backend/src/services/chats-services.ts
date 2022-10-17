@@ -13,3 +13,4 @@ export const saveChat = async (chatItem: ChatItem): Promise<ChatItem[]> => {
 export const loadChats = async (): Promise<ChatItem[]> => {
   return await loadAllChatItems();
 };
+

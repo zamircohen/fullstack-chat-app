@@ -25,3 +25,11 @@ export const saveChatItem = async (chatItem: ChatItem): Promise<void> => {
 export const deleteChatItem = async (id: string): Promise<void> => {
   await ChatModel.deleteOne({ _id: id });
 };
+
+export const updateChatItem = async (
+  id: string,
+  chatItem: ChatItem
+): Promise<void> => {
+  await ChatModel.updateOne({ _id: id }, chatItem);
+};
+

@@ -46,7 +46,7 @@ textarea { font-family: inherit; font-size: inherit;}
 
 .Bottom_Field {
   position: fixed;
-  bottom: 0;
+  bottom: 1rem;
   width: 50%;
   overflow: hidden;
   height: 20%;

@@ -17,8 +17,8 @@ function App() {
   const [chats, setChats] = useState<ChatItem[]>([]);
   const [error, setError] = useState<string | undefined>();
   const [chatUser, setChatUser] = useState<string>("");
-  
-  const bottomRef = useRef<null | HTMLDivElement>(null); 
+
+  const bottomRef = useRef<null | HTMLDivElement>(null);
 
   const createChat = async (
     chatText: string,
@@ -61,7 +61,7 @@ function App() {
           setChats([]);
           setError("Something went wrong while searching for my chats...");
         });
-        bottomRef.current?.scrollIntoView({behavior: 'smooth'});
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
     }, 500);
 
     return () => clearInterval(interval);
@@ -101,7 +101,6 @@ function App() {
                   </button>
                 </div>
               </>
-              
             );
           })}
         </div>

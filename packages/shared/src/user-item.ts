@@ -1,5 +1,5 @@
 export default interface UserItem {
     _id?: string,
-    username: string,
+    user: string,
     password: string,
 }
