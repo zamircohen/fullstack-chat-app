@@ -14,7 +14,7 @@ To get a local copy up and running follow the information down below.
  
 1. First start cloning the repo by entering the below command in your terminal.
    ```sh
-   git clone https://github.com/zamircohen/fullstack-chat-app.git
+   git clone https://github.com/zamircohen/fullstack-chat-app
    ```
 2. After cloning the repository, type the below command in YOUR-FOLDER/packages/backend and YOUR-FOLDER/packages/frontend
    ```sh
