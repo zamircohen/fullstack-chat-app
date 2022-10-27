@@ -3,6 +3,7 @@ import ChatItem from "../../shared/src/chat-item";
 import "./App.css";
 import axios from "axios";
 import { BsTrash } from "react-icons/bs";
+import './darkMode.css';
 
 axios.defaults.baseURL =
   process.env.REACT_APP_CHAT_API || "http://localhost:3001";
@@ -17,6 +18,15 @@ function App() {
   const [chats, setChats] = useState<ChatItem[]>([]);
   const [error, setError] = useState<string | undefined>();
   const [chatUser, setChatUser] = useState<string>("");
+
+  const [theme, setTheme] = useState<string>("light");
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
 
   const bottomRef = useRef<null | HTMLDivElement>(null);
 
@@ -108,12 +118,18 @@ function App() {
     } else <div>'Waiting for chats'</div>;
   };
 
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
+    <div className={`App ${theme}`}>
     <div className="App">
       <header className="App-header">
         <div className="Header">
           <br />
           ChatUp
+          <button className="toggle-button" onClick={toggleTheme}>Mode</button>
         </div>
         <div className="Output-box">{output()}</div>
 
@@ -147,6 +163,7 @@ function App() {
           </button>
         </div>
       </header>
+    </div>
     </div>
   );
 }
