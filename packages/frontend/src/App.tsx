@@ -6,7 +6,7 @@ import { BsTrash } from "react-icons/bs";
 import './darkMode.css';
 
 axios.defaults.baseURL =
-  process.env.REACT_APP_CHAT_API || "http://localhost:3001";
+  process.env.REACT_APP_CHAT_API || "http://localhost:4000";
 
 const fetchChats = async (): Promise<ChatItem[]> => {
   const response = await axios.get<ChatItem[]>("/chats");

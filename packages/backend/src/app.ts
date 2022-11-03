@@ -9,7 +9,7 @@ dotenv.config();
 const app: Application = express();
 app.use(cors());
 app.use(json());
-const port: number = parseInt(process.env.SERVER_PORT || "3001");
+const port: number = parseInt(process.env.SERVER_PORT || "4000");
 const mongoURL: string =
   process.env.MONGODB_URL || "mongodb://localhost:27017/mychats";
 

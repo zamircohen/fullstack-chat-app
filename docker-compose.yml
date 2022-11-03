@@ -6,7 +6,7 @@ services:
     ports:
       - "4000:4000"
     environment:
-      - MONGODB_URL=mongodb://db:27017/myChats
+      - MONGODB_URL=mongodb://db:27017/mychats
       - PORT = 4000
 
   frontend:
